@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOG Elektro | Профессиональный электромонтаж на высоте</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+        :root {
+            --primary: #2A5CAA;
+            --accent: #FFA500;
+            --text: #333333;
+            --light: #f8f9fa;
+            --dark: #1a3a6e;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f5f7fa;
+            transition: all 0.3s ease;
+        }
+        
+        /* Навигация */
+        header {
+            background-color: var(--primary);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 50px;
+            transition: transform 0.3s;
+        }
+        
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent);
+            color: black;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Основные стили кнопок */
+        .btn {
+            background-color: var(--accent);
+            color: black;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: #e69500;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        /* Герой-секция */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            max-width: 800px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 900px;
+            margin-bottom: 70px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Секции */
+        .section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        /* Сетка услуг */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Команда */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 100%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .team-member h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .team-member p {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        /* Контакты */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 12px;
+            color: var(--primary);
+            font-size: 18px;
+            min-width: 24px;
+        }
+        
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--dark);
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(42, 92, 170, 0.1);
+        }
+        
+        .form-group textarea {
+            height: 140px;
+            resize: vertical;
+        }
+        
+        /* Футер */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            color: black;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            color: #aaa;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            font-size: 14px;
+        }
+        
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+            animation: modalopen 0.4s;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: var(--primary);
+        }
+        
+        .modal-content h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .modal-content img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0 20px;
+        }
+        
+        .modal-content ul {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+        
+        .modal-content li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo-container {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 8px;
+            }
+            
+            nav ul li a {
+                padding: 6px 10px;
+                font-size: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .hero p {
+                font-size: 17px;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+            
+            .section-title h2 {
+                font-size: 26px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        }
+</style>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-container">
+            <a href="#" class="logo">
+              <img src="images/logo.png" alt="AOG Elektro Logo" class="logo-img">
+            </a>
+            <div class="language-switcher">
+              <button class="lang-btn active" data-lang="ru">RU</button>
+              <button class="lang-btn" data-lang="en">EN</button>
+              <button class="lang-btn" data-lang="lt">LT</button>
+              <button class="lang-btn" data-lang="pl">PL</button>
+            </div>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#services" data-key="nav.services">Услуги</a></li>
+              <li><a href="#team" data-key="nav.team">Команда</a></li>
+              <li><a href="#projects" data-key="nav.projects">Проекты</a></li>
+              <li><a href="#contact" data-key="nav.contact">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+      <div class="container">
+        <h1 data-key="hero.title">Профессиональный электромонтаж на высоте</h1>
+        <p data-key="hero.subtitle">Сертифицированные специалисты с допусками EN 353/361. Работаем по всей Литве.</p>
+        <button class="btn" onclick="openModal('callback-modal')" data-key="hero.button">Заказать звонок</button>
+      </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-key="services.title">AOG ELECTRO Наши услуги</h2>
+          <p data-key="services.subtitle">Полный спектр электромонтажных работ на высоте</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-img">
+              <img src="images/service1.jpg" alt="Монтаж электрооборудования">
+            </div>
+            <div class="service-content">
+              <h3 data-key="services.service1.title">Монтаж электрооборудования</h3>
+              <p data-key="services.service1.desc">Профессиональный монтаж электрощитов, кабельных линий и другого оборудования на высоте.</p>
+              <button class="btn" onclick="openModal('service1-modal')" data-key="services.button">Подробнее</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-img">
+              <img src="images/service2.jpg" alt="Ремонтные работы">
+            </div>
+            <div class="service-content">
+              <h3 data-key="services.service2.title">Ремонтные работы</h3>
+              <p data-key="services.service2.desc">Диагностика и ремонт электрооборудования на промышленных объектах и высотных зданиях.</p>
+              <button class="btn" onclick="openModal('service2-modal')" data-key="services.button">Подробнее</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-img">
+              <img src="images/service3.jpg" alt="Техническое обслуживание">
+            </div>
+            <div class="service-content">
+              <h3 data-key="services.service3.title">Техническое обслуживание</h3>
+              <p data-key="services.service3.desc">Плановые проверки и профилактические работы для электроустановок.</p>
+              <button class="btn" onclick="openModal('service3-modal')" data-key="services.button">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Команда -->
+    <section class="section" id="team">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-key="team.title">Наша команда</h2>
+          <p data-key="team.subtitle">Профессионалы с многолетним опытом работы</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="images/andrey.png" alt="Andrey Gritskiv" class="team-photo">
+            <h3>Andrey Gritskiv</h3>
+            <p data-key="team.andrey.position">Главный Электро инженеер</p>
+            <p data-key="team.andrey.experience">25+ лет опыта</p>
+            <p data-key="team.andrey.certificates">Сертификаты: EN 353/361, Elektrofachkraft</p>
+          </div>
+
+          <div class="team-member">
+            <img src="images/oksana.png" alt="Oksana Gritskiv" class="team-photo">
+            <h3>Oksana Gritskiv</h3>
+            <p data-key="team.oksana.position">Менеджер проектов</p>
+            <p data-key="team.oksana.experience">15+ лет опыта</p>
+            <p data-key="team.oksana.specialization">Специализация: работа с персоналом, поиск проектов</p>
+          </div>
+
+          <div class="team-member">
+            <img src="images/team.png" alt="Монтажная бригада" class="team-photo">
+            <h3 data-key="team.crew.title">Монтажная бригада</h3>
+            <p data-key="team.crew.description">Квалифицированные специалисты</p>
+            <p data-key="team.crew.certificates">Все сотрудники имеют необходимые сертификаты</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Проекты -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-key="projects.title">Наши проекты</h2>
+          <p data-key="projects.subtitle">Реализованные работы в различных отраслях</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Промышленный объект">
+            </div>
+            <div class="service-content">
+              <h3 data-key="projects.project1.title">Промышленный объект</h3>
+              <p data-key="projects.project1.desc">Полный цикл электромонтажных работ на производственном предприятии.</p>
+              <button class="btn" onclick="openModal('project1-modal')" data-key="projects.button">Подробнее</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80" alt="Жилой комплекс">
+            </div>
+            <div class="service-content">
+              <h3 data-key="projects.project2.title">Жилой комплекс</h3>
+              <p data-key="projects.project2.desc">Монтаж электрооборудования в многоэтажном жилом доме.</p>
+              <button class="btn" onclick="openModal('project2-modal')" data-key="projects.button">Подробнее</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-img">
+              <img src="images/project3.jpg" alt="Телекоммуникации">
+            </div>
+            <div class="service-content">
+              <h3 data-key="projects.project3.title">Телекоммуникации</h3>
+              <p data-key="projects.project3.desc">Установка оборудования на телекоммуникационных вышках.</p>
+              <button class="btn" onclick="openModal('project3-modal')" data-key="projects.button">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-key="contact.title">Контакты</h2>
+          <p data-key="contact.subtitle">Свяжитесь с нами для обсуждения вашего проекта</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3 data-key="contact.info.title">Контактная информация</h3>
+            <p><i class="fas fa-map-marker-alt"></i> <span data-key="contact.address">г. Клайпеда, ул. Электросети, 15</span></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+37064888657">+370 648 88657</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:craer@yandex.com">craer@yandex.com</a></p>
+            <p><i class="fas fa-clock"></i> <span data-key="contact.hours">Пн-Пт: 8:00-17:00</span></p>
+
+            <h3 data-key="contact.social.title">Социальные сети</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3 data-key="contact.form.title">Форма обратной связи</h3>
+            <form id="contactForm" onsubmit="submitForm(event)">
+              <div class="form-group">
+                <label for="name" data-key="contact.form.name">Ваше имя</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" data-key="contact.form.phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" data-key="contact.form.email">Email</label>
+                <input type="email" id="email" name="email">
+              </div>
+
+              <div class="form-group">
+                <label for="service" data-key="contact.form.service">Интересующая услуга</label>
+                <select id="service" name="service">
+                  <option value="montage" data-key="contact.form.option1">Монтаж электрооборудования</option>
+                  <option value="repair" data-key="contact.form.option2">Ремонтные работы</option>
+                  <option value="service" data-key="contact.form.option3">Техническое обслуживание</option>
+                  <option value="other" data-key="contact.form.option4">Другое</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" data-key="contact.form.message">Сообщение</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn" data-key="contact.form.button">Отправить запрос</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <img src="images/logo-white.png" alt="AOG Elektro" class="footer-logo">
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="footer-links">
+            <a href="#services" data-key="footer.services">Услуги</a>
+            <a href="#team" data-key="footer.team">Команда</a>
+            <a href="#projects" data-key="footer.projects">Проекты</a>
+            <a href="#contact" data-key="footer.contact">Контакты</a>
+            <a href="#" data-key="footer.privacy">Политика конфиденциальности</a>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2023 AOG Elektro. <span data-key="footer.rights">Все права защищены.</span></p>
+            <p data-key="footer.certificates">Сертификаты: EN 353/361, ISO 9001</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Модальные окна -->
+    <div id="callback-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('callback-modal')">&times;</span>
+        <h2 data-key="modal.callback.title">Заказать звонок</h2>
+        <form id="callbackForm">
+          <div class="form-group">
+            <label for="callback-name" data-key="modal.callback.name">Ваше имя</label>
+            <input type="text" id="callback-name" required>
+          </div>
+          <div class="form-group">
+            <label for="callback-phone" data-key="modal.callback.phone">Телефон</label>
+            <input type="tel" id="callback-phone" required>
+          </div>
+          <div class="form-group">
+            <label for="callback-time" data-key="modal.callback.time">Удобное время для звонка</label>
+            <input type="text" id="callback-time">
+          </div>
+          <button type="submit" class="btn" data-key="modal.callback.button">Заказать звонок</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Модалки для услуг -->
+    <div id="service1-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('service1-modal')">&times;</span>
+        <h2 data-key="modal.service1.title">Монтаж электрооборудования</h2>
+        <img src="images/service1.jpg" alt="Монтаж электрооборудования">
+        <p data-key="modal.service1.desc">Мы предлагаем полный комплекс услуг по монтажу электрооборудования на высоте:</p>
+        <ul>
+          <li data-key="modal.service1.list1">Установка электрощитов и распределительных устройств</li>
+          <li data-key="modal.service1.list2">Прокладка кабельных линий</li>
+          <li data-key="modal.service1.list3">Монтаж осветительного оборудования</li>
+          <li data-key="modal.service1.list4">Установка систем заземления</li>
+        </ul>
+        <button class="btn" onclick="closeModal('service1-modal'); openModal('callback-modal')" data-key="modal.service1.button">Заказать услугу</button>
+      </div>
+    </div>
+
+    <div id="service2-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('service2-modal')">&times;</span>
+        <h2 data-key="modal.service2.title">Ремонтные работы</h2>
+        <img src="images/service2.jpg" alt="Ремонтные работы">
+        <p data-key="modal.service2.desc">Наши специалисты выполняют все виды ремонтных работ на высоте:</p>
+        <ul>
+          <li data-key="modal.service2.list1">Диагностика неисправностей</li>
+          <li data-key="modal.service2.list2">Ремонт электрооборудования</li>
+          <li data-key="modal.service2.list3">Замена изношенных элементов</li>
+          <li data-key="modal.service2.list4">Аварийные работы</li>
+        </ul>
+        <button class="btn" onclick="closeModal('service2-modal'); openModal('callback-modal')" data-key="modal.service2.button">Заказать услугу</button>
+      </div>
+    </div>
+
+    <div id="service3-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('service3-modal')">&times;</span>
+        <h2 data-key="modal.service3.title">Техническое обслуживание</h2>
+        <img src="images/service3.jpg" alt="Техническое обслуживание">
+        <p data-key="modal.service3.desc">Регулярное техническое обслуживание - залог бесперебойной работы электрооборудования:</p>
+        <ul>
+          <li data-key="modal.service3.list1">Плановые проверки</li>
+          <li data-key="modal.service3.list2">Профилактические работы</li>
+          <li data-key="modal.service3.list3">Тестирование оборудования</li>
+          <li data-key="modal.service3.list4">Составление отчетов</li>
+        </ul>
+        <button class="btn" onclick="closeModal('service3-modal'); openModal('callback-modal')" data-key="modal.service3.button">Заказать услугу</button>
+      </div>
+    </div>
+
+
+    <!-- Модалки для проект -->
+    <div id="project1-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project1-modal')">&times;</span>
+        <h2 data-key="modal.project1.title">Промышленный объект</h2>
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Промышленный объект">
+        <p data-key="modal.project1.desc">Полный цикл электромонтажных работ на производственном предприятии:</p>
+        <ul>
+          <li data-key="modal.project1.list1">Монтаж силовых щитов</li>
+          <li data-key="modal.project1.list2">Прокладка кабельных трасс</li>
+          <li data-key="modal.project1.list3">Установка осветительных систем</li>
+          <li data-key="modal.project1.list4">Подключение промышленного оборудования</li>
+        </ul>
+        <button class="btn" onclick="closeModal('project1-modal'); openModal('callback-modal')" data-key="modal.project1.button">Заказать услугу</button>
+      </div>
+    </div>
+
+    <div id="project2-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project2-modal')">&times;</span>
+        <h2 data-key="modal.project2.title">Жилой комплекс</h2>
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80" alt="Жилой комплекс">
+        <p data-key="modal.project2.desc">Монтаж электрооборудования в многоэтажном жилом доме:</p>
+        <ul>
+          <li data-key="modal.project2.list1">Установка распределительных щитов</li>
+          <li data-key="modal.project2.list2">Прокладка электропроводки</li>
+          <li data-key="modal.project2.list3">Монтаж системы освещения</li>
+          <li data-key="modal.project2.list4">Подключение бытовой техники</li>
+        </ul>
+        <button class="btn" onclick="closeModal('project2-modal'); openModal('callback-modal')" data-key="modal.project2.button">Заказать услугу</button>
+      </div>
+    </div>
+
+    <div id="project3-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project3-modal')">&times;</span>
+        <h2 data-key="modal.project3.title">Телекоммуникации</h2>
+        <img src="images/project3.jpg" alt="Телекоммуникации">
+        <p data-key="modal.project3.desc">Установка оборудования на телекоммуникационных вышках:</p>
+        <ul>
+          <li data-key="modal.project3.list1">Монтаж антенных систем</li>
+          <li data-key="modal.project3.list2">Прокладка кабельных линий</li>
+          <li data-key="modal.project3.list3">Установка передающего оборудования</li>
+          <li data-key="modal.project3.list4">Тестирование и настройка систем</li>
+        </ul>
+        <button class="btn" onclick="closeModal('project3-modal'); openModal('callback-modal')" data-key="modal.project3.button">Заказать услугу</button>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+<script>
+        // Многоязычная поддержка
+        const translations = {
+            ru: {
+                "hero.title": "Профессиональный электромонтаж на высоте",
+                "hero.subtitle": "Сертифицированные специалисты с допусками EN 353/361. Работаем по всей Литве.",
+                "hero.button": "Заказать звонок",
+                "nav.services": "Услуги",
+                "nav.team": "Команда",
+                "nav.projects": "Проекты",
+                "nav.contact": "Контакты",
+                "services.title": "Наши услуги",
+                "services.subtitle": "Полный спектр электромонтажных работ на высоте",
+                "services.service1.title": "Монтаж электрооборудования",
+                "services.service1.desc": "Профессиональный монтаж электрощитов, кабельных линий и другого оборудования на высоте.",
+                "services.service2.title": "Ремонтные работы",
+                "services.service2.desc": "Диагностика и ремонт электрооборудования на промышленных объектах и высотных зданиях.",
+                "services.service3.title": "Техническое обслуживание",
+                "services.service3.desc": "Плановые проверки и профилактические работы для электроустановок.",
+                "services.button": "Подробнее",
+                "team.title": "Наша команда",
+                "team.subtitle": "Профессионалы с многолетним опытом работы",
+                "team.andrey.position": "Главный инженер",
+                "team.andrey.experience": "15+ лет опыта",
+                "team.andrey.certificates": "Сертификаты: EN 353/361, Elektrofachkraft",
+                "team.oksana.position": "Менеджер проектов",
+                "team.oksana.experience": "10+ лет опыта",
+                "team.oksana.specialization": "Специализация: работа с персоналом, поиск проектов",
+                "team.crew.title": "Монтажная бригада",
+                "team.crew.description": "Квалифицированные специалисты",
+                "team.crew.certificates": "Все сотрудники имеют необходимые сертификаты",
+                "projects.title": "Наши проекты",
+                "projects.subtitle": "Реализованные работы в различных отраслях",
+                "projects.project1.title": "Промышленный объект",
+                "projects.project1.desc": "Полный цикл электромонтажных работ на производственном предприятии.",
+                "projects.project2.title": "Жилой комплекс",
+                "projects.project2.desc": "Монтаж электрооборудования в многоэтажном жилом доме.",
+                "projects.project3.title": "Телекоммуникации",
+                "projects.project3.desc": "Установка оборудования на телекоммуникационных вышках.",
+                "projects.button": "Подробнее",
+                "contact.title": "Контакты",
+                "contact.subtitle": "Свяжитесь с нами для обсуждения вашего проекта",
+                "contact.info.title": "Контактная информация",
+                "contact.address": "г. Клайпеда, ул. Электросети, 15",
+                "contact.hours": "Пн-Пт: 8:00-17:00",
+                "contact.social.title": "Социальные сети",
+                "contact.form.title": "Форма обратной связи",
+                "contact.form.name": "Ваше имя",
+                "contact.form.phone": "Телефон",
+                "contact.form.email": "Email",
+                "contact.form.service": "Интересующая услуга",
+                "contact.form.option1": "Монтаж электрооборудования",
+                "contact.form.option2": "Ремонтные работы",
+                "contact.form.option3": "Техническое обслуживание",
+                "contact.form.option4": "Другое",
+                "contact.form.message": "Сообщение",
+                "contact.form.button": "Отправить запрос",
+                "footer.services": "Услуги",
+                "footer.team": "Команда",
+                "footer.projects": "Проекты",
+                "footer.contact": "Контакты",
+                "footer.privacy": "Политика конфиденциальности",
+                "footer.rights": "Все права защищены.",
+                "footer.certificates": "Сертификаты: EN 353/361, ISO 9001",
+                "modal.callback.title": "Заказать звонок",
+                "modal.callback.name": "Ваше имя",
+                "modal.callback.phone": "Телефон",
+                "modal.callback.time": "Удобное время для звонка",
+                "modal.callback.button": "Заказать звонок",
+                "modal.service1.title": "Монтаж электрооборудования",
+                "modal.service1.desc": "Мы предлагаем полный комплекс услуг по монтажу электрооборудования на высоте:",
+                "modal.service1.list1": "Установка электрощитов и распределительных устройств",
+                "modal.service1.list2": "Прокладка кабельных линий",
+                "modal.service1.list3": "Монтаж осветительного оборудования",
+                "modal.service1.list4": "Установка систем заземления",
+                "modal.service1.button": "Заказать услугу",
+                "modal.service2.title": "Ремонтные работы",
+                "modal.service2.desc": "Наши специалисты выполняют все виды ремонтных работ на высоте:",
+                "modal.service2.list1": "Диагностика неисправностей",
+                "modal.service2.list2": "Ремонт электрооборудования",
+                "modal.service2.list3": "Замена изношенных элементов",
+                "modal.service2.list4": "Аварийные работы",
+                "modal.service2.button": "Заказать услугу",
+                "modal.service3.title": "Техническое обслуживание",
+                "modal.service3.desc": "Регулярное техническое обслуживание - залог бесперебойной работы электрооборудования:",
+                "modal.service3.list1": "Плановые проверки",
+                "modal.service3.list2": "Профилактические работы",
+                "modal.service3.list3": "Тестирование оборудования",
+                "modal.service3.list4": "Составление отчетов",
+                "modal.service3.button": "Заказать услугу",
+                "modal.project1.title": "Промышленный объект",
+                "modal.project1.desc": "Полный цикл электромонтажных работ на производственном предприятии:",
+                "modal.project1.list1": "Монтаж силовых щитов",
+                "modal.project1.list2": "Прокладка кабельных трасс",
+                "modal.project1.list3": "Установка осветительных систем",
+                "modal.project1.list4": "Подключение промышленного оборудования",
+                "modal.project1.button": "Заказать услугу",
+                "modal.project2.title": "Жилой комплекс",
+                "modal.project2.desc": "Монтаж электрооборудования в многоэтажном жилом доме:",
+                "modal.project2.list1": "Установка распределительных щитов",
+                "modal.project2.list2": "Прокладка электропроводки",
+                "modal.project2.list3": "Монтаж системы освещения",
+                "modal.project2.list4": "Подключение бытовой техники",
+                "modal.project2.button": "Заказать услугу",
+                "modal.project3.title": "Телекоммуникации",
+                "modal.project3.desc": "Установка оборудования на телекоммуникационных вышках:",
+                "modal.project3.list1": "Монтаж антенных систем",
+                "modal.project3.list2": "Прокладка кабельных линий",
+                "modal.project3.list3": "Установка передающего оборудования",
+                "modal.project3.list4": "Тестирование и настройка систем",
+                "modal.project3.button": "Заказать услугу"
+            },
+            en: {
+                "hero.title": "Professional Electrical Installation at Height",
+                "hero.subtitle": "Certified specialists with EN 353/361 permits. Working throughout Lithuania.",
+                "hero.button": "Request a Callback",
+                "nav.services": "Services",
+                "nav.team": "Team",
+                "nav.projects": "Projects",
+                "nav.contact": "Contact",
+                "services.title": "Our Services",
+                "services.subtitle": "Full range of electrical installation works at height",
+                "services.service1.title": "Electrical Equipment Installation",
+                "services.service1.desc": "Professional installation of switchboards, cable lines and other equipment at height.",
+                "services.service2.title": "Repair Works",
+                "services.service2.desc": "Diagnostics and repair of electrical equipment at industrial facilities and high-rise buildings.",
+                "services.service3.title": "Technical Maintenance",
+                "services.service3.desc": "Scheduled inspections and preventive maintenance for electrical installations.",
+                "services.button": "Learn More",
+                "team.title": "Our Team",
+                "team.subtitle": "Professionals with years of experience",
+                "team.andrey.position": "Chief Engineer",
+                "team.andrey.experience": "15+ years of experience",
+                "team.andrey.certificates": "Certificates: EN 353/361, Elektrofachkraft",
+                "team.oksana.position": "Project Manager",
+                "team.oksana.experience": "10+ years of experience",
+                "team.oksana.specialization": "Specialization: personnel management, project acquisition",
+                "team.crew.title": "Installation Team",
+                "team.crew.description": "Qualified specialists",
+                "team.crew.certificates": "All employees have necessary certificates",
+                "projects.title": "Our Projects",
+                "projects.subtitle": "Completed works in various industries",
+                "projects.project1.title": "Industrial Facility",
+                "projects.project1.desc": "Full cycle of electrical installation works at a production enterprise.",
+                "projects.project2.title": "Residential Complex",
+                "projects.project2.desc": "Installation of electrical equipment in a multi-story residential building.",
+                "projects.project3.title": "Telecommunications",
+                "projects.project3.desc": "Equipment installation on telecommunication towers.",
+                "projects.button": "Learn More",
+                "contact.title": "Contact Us",
+                "contact.subtitle": "Get in touch to discuss your project",
+                "contact.info.title": "Contact Information",
+                "contact.address": "Klaipeda, Elektros St. 15",
+                "contact.hours": "Mon-Fri: 8:00-17:00",
+                "contact.social.title": "Social Networks",
+                "contact.form.title": "Contact Form",
+                "contact.form.name": "Your Name",
+                "contact.form.phone": "Phone",
+                "contact.form.email": "Email",
+                "contact.form.service": "Service of Interest",
+                "contact.form.option1": "Electrical Equipment Installation",
+                "contact.form.option2": "Repair Works",
+                "contact.form.option3": "Technical Maintenance",
+                "contact.form.option4": "Other",
+                "contact.form.message": "Message",
+                "contact.form.button": "Send Request",
+                "footer.services": "Services",
+                "footer.team": "Team",
+                "footer.projects": "Projects",
+                "footer.contact": "Contact",
+                "footer.privacy": "Privacy Policy",
+                "footer.rights": "All Rights Reserved.",
+                "footer.certificates": "Certificates: EN 353/361, ISO 9001",
+                "modal.callback.title": "Request a Callback",
+                "modal.callback.name": "Your Name",
+                "modal.callback.phone": "Phone",
+                "modal.callback.time": "Convenient Time for Call",
+                "modal.callback.button": "Request Callback",
+                "modal.service1.title": "Electrical Equipment Installation",
+                "modal.service1.desc": "We offer a full range of services for installing electrical equipment at height:",
+                "modal.service1.list1": "Installation of switchboards and distribution devices",
+                "modal.service1.list2": "Laying cable lines",
+                "modal.service1.list3": "Installation of lighting equipment",
+                "modal.service1.list4": "Installation of grounding systems",
+                "modal.service1.button": "Order Service",
+                "modal.service2.title": "Repair Works",
+                "modal.service2.desc": "Our specialists perform all types of repair work at height:",
+                "modal.service2.list1": "Fault diagnostics",
+                "modal.service2.list2": "Repair of electrical equipment",
+                "modal.service2.list3": "Replacement of worn components",
+                "modal.service2.list4": "Emergency works",
+                "modal.service2.button": "Order Service",
+                "modal.service3.title": "Technical Maintenance",
+                "modal.service3.desc": "Regular technical maintenance is the key to uninterrupted operation of electrical equipment:",
+                "modal.service3.list1": "Scheduled inspections",
+                "modal.service3.list2": "Preventive maintenance",
+                "modal.service3.list3": "Equipment testing",
+                "modal.service3.list4": "Report preparation",
+                "modal.service3.button": "Order Service",
+                "modal.project1.title": "Industrial Facility",
+                "modal.project1.desc": "Full cycle of electrical installation works at a production enterprise:",
+                "modal.project1.list1": "Installation of power panels",
+                "modal.project1.list2": "Laying cable routes",
+                "modal.project1.list3": "Installation of lighting systems",
+                "modal.project1.list4": "Connection of industrial equipment",
+                "modal.project1.button": "Order Service",
+                "modal.project2.title": "Residential Complex",
+                "modal.project2.desc": "Installation of electrical equipment in a multi-story residential building:",
+                "modal.project2.list1": "Installation of distribution boards",
+                "modal.project2.list2": "Wiring installation",
+                "modal.project2.list3": "Lighting system installation",
+                "modal.project2.list4": "Connection of household appliances",
+                "modal.project2.button": "Order Service",
+                "modal.project3.title": "Telecommunications",
+                "modal.project3.desc": "Equipment installation on telecommunication towers:",
+                "modal.project3.list1": "Installation of antenna systems",
+                "modal.project3.list2": "Laying cable lines",
+                "modal.project3.list3": "Installation of transmitting equipment",
+                "modal.project3.list4": "System testing and configuration",
+                "modal.project3.button": "Order Service"
+            },
+            lt: {
+                "hero.title": "Profesionali elektros įrangos montavimas aukštyje",
+                "hero.subtitle": "Sertifikuoti specialistai su EN 353/361 leidimais. Dirbame visoje Lietuvoje.",
+                "hero.button": "Užsakyti skambutį",
+                "nav.services": "Paslaugos",
+                "nav.team": "Komanda",
+                "nav.projects": "Projektai",
+                "nav.contact": "Kontaktai",
+                "services.title": "Mūsų paslaugos",
+                "services.subtitle": "Visos elektros montavimo darbų aukštyje paslaugos",
+                "services.service1.title": "Elektros įrangos montavimas",
+                "services.service1.desc": "Profesionalus elektros skydų, kabelių linijų ir kitos įrangos montavimas aukštyje.",
+                "services.service2.title": "Remonto darbai",
+                "services.service2.desc": "Elektros įrangos diagnostika ir remontas pramonės objektuose ir aukštuose pastatuose.",
+                "services.service3.title": "Techninė priežiūra",
+                "services.service3.desc": "Planinės patikros ir profilaktiniai elektros įrenginių darbai.",
+                "services.button": "Sužinoti daugiau",
+                "team.title": "Mūsų komanda",
+                "team.subtitle": "Patyrę profesionalai",
+                "team.andrey.position": "Vyriausiasis inžinierius",
+                "team.andrey.experience": "15+ metų patirtis",
+                "team.andrey.certificates": "Sertifikatai: EN 353/361, Elektrofachkraft",
+                "team.oksana.position": "Projektų vadovė",
+                "team.oksana.experience": "10+ metų patirtis",
+                "team.oksana.specialization": "Specializacija: personalo valdymas, projektų paieška",
+                "team.crew.title": "Montavimo brigada",
+                "team.crew.description": "Kvalifikuoti specialistai",
+                "team.crew.certificates": "Visi darbuotojai turi reikiamus sertifikatus",
+                "projects.title": "Mūsų projektai",
+                "projects.subtitle": "Įgyvendinti darbai įvairiose srityse",
+                "projects.project1.title": "Pramonės objektas",
+                "projects.project1.desc": "Visas elektros montavimo darbų ciklas gamybos įmonėje.",
+                "projects.project2.title": "Gyvenamasis kompleksas",
+                "projects.project2.desc": "Elektros įrangos montavimas daugiaaukščiame gyvenamajame name.",
+                "projects.project3.title": "Ryšio priemonės",
+                "projects.project3.desc": "Įrangos montavimas telekomunikacijų bokštuose.",
+                "projects.button": "Sužinoti daugiau",
+                "contact.title": "Kontaktai",
+                "contact.subtitle": "Susisiekite su mumis aptarti savo projektą",
+                "contact.info.title": "Kontaktinė informacija",
+                "contact.address": "Klaipėda, Elektros g. 15",
+                "contact.hours": "Pirmadienis-Penktadienis: 8:00-17:00",
+                "contact.social.title": "Socialiniai tinklai",
+                "contact.form.title": "Grįžtamojo ryšio forma",
+                "contact.form.name": "Jūsų vardas",
+                "contact.form.phone": "Telefonas",
+                "contact.form.email": "El. paštas",
+                "contact.form.service": "Dominanti paslauga",
+                "contact.form.option1": "Elektros įrangos montavimas",
+                "contact.form.option2": "Remonto darbai",
+                "contact.form.option3": "Techninė priežiūra",
+                "contact.form.option4": "Kita",
+                "contact.form.message": "Žinutė",
+                "contact.form.button": "Siųsti užklausą",
+                "footer.services": "Paslaugos",
+                "footer.team": "Komanda",
+                "footer.projects": "Projektai",
+                "footer.contact": "Kontaktai",
+                "footer.privacy": "Privatumo politika",
+                "footer.rights": "Visos teisės saugomos.",
+                "footer.certificates": "Sertifikatai: EN 353/361, ISO 9001",
+                "modal.callback.title": "Užsakyti skambutį",
+                "modal.callback.name": "Jūsų vardas",
+                "modal.callback.phone": "Telefonas",
+                "modal.callback.time": "Patogus skambučio laikas",
+                "modal.callback.button": "Užsakyti skambutį",
+                "modal.service1.title": "Elektros įrangos montavimas",
+                "modal.service1.desc": "Siūlome visą elektros įrangos montavimo aukštyje paslaugų spektrą:",
+                "modal.service1.list1": "Elektros skydų ir paskirstymo įrenginių montavimas",
+                "modal.service1.list2": "Kabelių linijų klojimas",
+                "modal.service1.list3": "Apšvietimo įrangos montavimas",
+                "modal.service1.list4": "Įžeminimo sistemų montavimas",
+                "modal.service1.button": "Užsakyti paslaugą",
+                "modal.service2.title": "Remonto darbai",
+                "modal.service2.desc": "Mūsų specialistai atlieka visų rūšių remonto darbus aukštyje:",
+                "modal.service2.list1": "Gedimų diagnostika",
+                "modal.service2.list2": "Elektros įrangos remontas",
+                "modal.service2.list3": "Susiradusių elementų keitimas",
+                "modal.service2.list4": "Avariniai darbai",
+                "modal.service2.button": "Užsakyti paslaugą",
+                "modal.service3.title": "Techninė priežiūra",
+                "modal.service3.desc": "Reguliari techninė priežiūra - elektros įrangos nenutrūkstamo veikimo garantas:",
+                "modal.service3.list1": "Planinės patikros",
+                "modal.service3.list2": "Profilaktiniai darbai",
+                "modal.service3.list3": "Įrangos testavimas",
+                "modal.service3.list4": "Ataskaitų rengimas",
+                "modal.service3.button": "Užsakyti paslaugą",
+                "modal.project1.title": "Pramonės objektas",
+                "modal.project1.desc": "Visas elektros montavimo darbų ciklas gamybos įmonėje:",
+                "modal.project1.list1": "Galingųjų skydų montavimas",
+                "modal.project1.list2": "Kabelių trasų klojimas",
+                "modal.project1.list3": "Apšvietimo sistemų montavimas",
+                "modal.project1.list4": "Pramoninės įrangos prijungimas",
+                "modal.project1.button": "Užsakyti paslaugą",
+                "modal.project2.title": "Gyvenamasis kompleksas",
+                "modal.project2.desc": "Elektros įrangos montavimas daugiaaukščiame gyvenamajame name:",
+                "modal.project2.list1": "Paskirstymo skydų montavimas",
+                "modal.project2.list2": "Elektros instaliacijos klojimas",
+                "modal.project2.list3": "Apšvietimo sistemos montavimas",
+                "modal.project2.list4": "Buitinės technikos prijungimas",
+                "modal.project2.button": "Užsakyti paslaugą",
+                "modal.project3.title": "Ryšio priemonės",
+                "modal.project3.desc": "Įrangos montavimas telekomunikacijų bokštuose:",
+                "modal.project3.list1": "Antenų sistemų montavimas",
+                "modal.project3.list2": "Kabelių linijų klojimas",
+                "modal.project3.list3": "Siųstuvų įrangos montavimas",
+                "modal.project3.list4": "Sistemų testavimas ir konfigūravimas",
+                "modal.project3.button": "Užsakyti paslaugą"
+            },
+            pl: {
+                "hero.title": "Profesjonalny montaż elektryczny na wysokości",
+                "hero.subtitle": "Certyfikowani specjaliści z uprawnieniami EN 353/361. Pracujemy na terenie całej Litwy.",
+                "hero.button": "Zamów rozmowę",
+                "nav.services": "Usługi",
+                "nav.team": "Zespół",
+                "nav.projects": "Projekty",
+                "nav.contact": "Kontakt",
+                "services.title": "Nasze usługi",
+                "services.subtitle": "Pełen zakres prac elektroinstalacyjnych na wysokości",
+                "services.service1.title": "Montaż urządzeń elektrycznych",
+                "services.service1.desc": "Profesjonalny montaż rozdzielnic, linii kablowych i innego sprzętu na wysokości.",
+                "services.service2.title": "Prace naprawcze",
+                "services.service2.desc": "Diagnostyka i naprawa urządzeń elektrycznych w obiektach przemysłowych i wysokich budynkach.",
+                "services.service3.title": "Konserwacja techniczna",
+                "services.service3.desc": "Planowane przeglądy i prace profilaktyczne dla instalacji elektrycznych.",
+                "services.button": "Dowiedz się więcej",
+                "team.title": "Nasz zespół",
+                "team.subtitle": "Profesjonaliści z wieloletnim doświadczeniem",
+                "team.andrey.position": "Główny inżynier",
+                "team.andrey.experience": "15+ lat doświadczenia",
+                "team.andrey.certificates": "Certyfikaty: EN 353/361, Elektrofachkraft",
+                "team.oksana.position": "Kierownik projektów",
+                "team.oksana.experience": "10+ lat doświadczenia",
+                "team.oksana.specialization": "Specjalizacja: zarządzanie personelem, pozyskiwanie projektów",
+                "team.crew.title": "Zespół montażowy",
+                "team.crew.description": "Wykwalifikowani specjaliści",
+                "team.crew.certificates": "Wszyscy pracownicy posiadają niezbędne certyfikaty",
+                "projects.title": "Nasze projekty",
+                "projects.subtitle": "Zrealizowane prace w różnych branżach",
+                "projects.project1.title": "Obiekt przemysłowy",
+                "projects.project1.desc": "Pełny cykl prac elektroinstalacyjnych w przedsiębiorstwie produkcyjnym.",
+                "projects.project2.title": "Osiedle mieszkaniowe",
+                "projects.project2.desc": "Montaż urządzeń elektrycznych w wielopiętrowym budynku mieszkalnym.",
+                "projects.project3.title": "Telekomunikacja",
+                "projects.project3.desc": "Montaż sprzętu na wieżach telekomunikacyjnych.",
+                "projects.button": "Dowiedz się więcej",
+                "contact.title": "Kontakt",
+                "contact.subtitle": "Skontaktuj się z nami, aby omówić swój projekt",
+                "contact.info.title": "Dane kontaktowe",
+                "contact.address": "Kłajpeda, ul. Elektros 15",
+                "contact.hours": "Pon-Pt: 8:00-17:00",
+                "contact.social.title": "Sieci społecznościowe",
+                "contact.form.title": "Formularz kontaktowy",
+                "contact.form.name": "Twoje imię",
+                "contact.form.phone": "Telefon",
+                "contact.form.email": "Email",
+                "contact.form.service": "Interesująca usługa",
+                "contact.form.option1": "Montaż urządzeń elektrycznych",
+                "contact.form.option2": "Prace naprawcze",
+                "contact.form.option3": "Konserwacja techniczna",
+                "contact.form.option4": "Inne",
+                "contact.form.message": "Wiadomość",
+                "contact.form.button": "Wyślij zapytanie",
+                "footer.services": "Usługi",
+                "footer.team": "Zespół",
+                "footer.projects": "Projekty",
+                "footer.contact": "Kontakt",
+                "footer.privacy": "Polityka prywatności",
+                "footer.rights": "Wszelkie prawa zastrzeżone.",
+                "footer.certificates": "Certyfikaty: EN 353/361, ISO 9001",
+                "modal.callback.title": "Zamów rozmowę",
+                "modal.callback.name": "Twoje imię",
+                "modal.callback.phone": "Telefon",
+                "modal.callback.time": "Dogodny czas na rozmowę",
+                "modal.callback.button": "Zamów rozmowę",
+                "modal.service1.title": "Montaż urządzeń elektrycznych",
+                "modal.service1.desc": "Oferujemy kompleksowe usługi montażu urządzeń elektrycznych na wysokości:",
+                "modal.service1.list1": "Montaż rozdzielnic i urządzeń rozdzielczych",
+                "modal.service1.list2": "Układanie linii kablowych",
+                "modal.service1.list3": "Montaż oświetlenia",
+                "modal.service1.list4": "Instalacja systemów uziemiających",
+                "modal.service1.button": "Zamów usługę",
+                "modal.service2.title": "Prace naprawcze",
+                "modal.service2.desc": "Nasi specjaliści wykonują wszystkie rodzaje prac naprawczych na wysokości:",
+                "modal.service2.list1": "Diagnostyka usterek",
+                "modal.service2.list2": "Naprawa urządzeń elektrycznych",
+                "modal.service2.list3": "Wymiana zużytych elementów",
+                "modal.service2.list4": "Prace awaryjne",
+                "modal.service2.button": "Zamów usługę",
+                "modal.service3.title": "Konserwacja techniczna",
+                "modal.service3.desc": "Regularna konserwacja techniczna to klucz do niezawodnej pracy urządzeń elektrycznych:",
+                "modal.service3.list1": "Planowane przeglądy",
+                "modal.service3.list2": "Prace profilaktyczne",
+                "modal.service3.list3": "Testowanie sprzętu",
+                "modal.service3.list4": "Przygotowywanie raportów",
+                "modal.service3.button": "Zamów usługę",
+                "modal.project1.title": "Obiekt przemysłowy",
+                "modal.project1.desc": "Pełny cykl prac elektroinstalacyjnych w przedsiębiorstwie produkcyjnym:",
+                "modal.project1.list1": "Montaż paneli zasilających",
+                "modal.project1.list2": "Układanie tras kablowych",
+                "modal.project1.list3": "Instalacja systemów oświetleniowych",
+                "modal.project1.list4": "Podłączenie urządzeń przemysłowych",
+                "modal.project1.button": "Zamów usługę",
+                "modal.project2.title": "Osiedle mieszkaniowe",
+                "modal.project2.desc": "Montaż urządzeń elektrycznych w wielopiętrowym budynku mieszkalnym:",
+                "modal.project2.list1": "Montaż rozdzielnic",
+                "modal.project2.list2": "Instalacja okablowania",
+                "modal.project2.list3": "Montaż systemu oświetlenia",
+                "modal.project2.list4": "Podłączenie urządzeń gospodarstwa domowego",
+                "modal.project2.button": "Zamów usługę",
+                "modal.project3.title": "Telekomunikacja",
+                "modal.project3.desc": "Montaż sprzętu na wieżach telekomunikacyjnych:",
+                "modal.project3.list1": "Montaż systemów antenowych",
+                "modal.project3.list2": "Układanie linii kablowych",
+                "modal.project3.list3": "Montaż urządzeń nadawczych",
+                "modal.project3.list4": "Testowanie i konfiguracja systemów",
+                "modal.project3.button": "Zamów usługę"
+            }
+        };
+
+        // Установка языка по умолчанию
+        let currentLang = 'ru';
+        
+        // Функция смены языка
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            
+            // Обновляем активную кнопку языка
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Обновляем текст на странице
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if(translations[lang] && translations[lang][key]) {
+                    if(element.tagName === 'INPUT' && element.type === 'submit') {
+                        element.value = translations[lang][key];
+                    } else if(element.tagName === 'OPTION') {
+                        element.textContent = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Сохраняем выбор языка
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Инициализация языка
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if(savedLang) {
+                changeLanguage(savedLang);
+            } else {
+                // Установка языка по умолчанию
+                changeLanguage('ru');
+            }
+            
+            // Обработчики для кнопок языка
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.dataset.lang);
+                });
+            });
+        });
+
+        // Управление модальными окнами
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Закрытие при клике вне модального окна
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Обработка формы
+        function submitForm(event) {
+            event.preventDefault();
+            alert(getTranslation('contact.form.thanks'));
+            document.getElementById('contactForm').reset();
+            return false;
+        }
+        
+        document.getElementById('callbackForm').onsubmit = function(event) {
+            event.preventDefault();
+            alert(getTranslation('modal.callback.thanks'));
+            this.reset();
+            closeModal('callback-modal');
+            return false;
+        }
+        
+        // Получение перевода
+        function getTranslation(key) {
+            return translations[currentLang] && translations[currentLang][key] ? 
+                translations[currentLang][key] : key;
+        }
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Добавление сообщений для форм
+        translations.ru["contact.form.thanks"] = "Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.";
+        translations.ru["modal.callback.thanks"] = "Мы перезвоним вам в указанное время!";
+        
+        translations.en["contact.form.thanks"] = "Thank you for your request! We will contact you shortly.";
+        translations.en["modal.callback.thanks"] = "We will call you at the specified time!";
+        
+        translations.lt["contact.form.thanks"] = "Ačiū už jūsų užklausą! Susisieksime su jumis netrukus.";
+        translations.lt["modal.callback.thanks"] = "Paskambinsime jums nurodytu laiku!";
+        
+        translations.pl["contact.form.thanks"] = "Dziękujemy za Twoje zgłoszenie! Skontaktujemy się z Tobą wkrótce.";
+        translations.pl["modal.callback.thanks"] = "Zadzwonimy do Ciebie w podanym czasie!";
+</script>
+  </body>
+</html>
